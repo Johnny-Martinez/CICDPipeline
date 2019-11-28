@@ -1,0 +1,14 @@
+# team selection in case you're in multiple teams
+# team_name "Felix Krause"
+# team_id "Q2CBPJ58CA"
+
+# To select a team for App Store Connect use
+# itc_team_name "Company Name"
+# itc_team_id "18742801"
+
+
+# for_platform :ios do
+#   team_id '123' # for all iOS related things
+#   for_lane :test do
+#     app_identifier 'com.app.test'
+#   end
