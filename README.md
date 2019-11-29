@@ -6,7 +6,7 @@ lane :my_lane do
   ...
   
   if some_variable == true
-    - do some stuff
+    -do some stuff
     else
       next -do something else
     end
