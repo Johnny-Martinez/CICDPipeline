@@ -1,22 +1,22 @@
-## FastLane Tips:
+# FastLane Tips:
 
-### Lane Flow Control
+##### Return Lane Values
+Upload image
 
-lane :my_lane do
-  ...
-  
-  if some_variable == true
-    -do some stuff
-    else
-      next -do something else
-    end
-  do more stuff
-  
-  ...
+###### Using return lane values
+Upload image
 
-end
+##### Lane Variables
+Upload image
 
-### Call additional lanes from another lane
+##### Exiting a lane early with "next"
+upload image
+
+##### Lane Flow Control
+Upload image
+
+
+##### Call additional lanes from another lane
 
 lane :sync_all_development do
   sync_device_info
@@ -24,7 +24,7 @@ lane :sync_all_development do
   match type: "development"
 end
 
-### Jenkins Pipeline Sample Jenkins Script
+##### Jenkins Pipeline Sample Jenkins Script
 
 This GitHub repository contains one single Jenkinsfile that is used to demonstrate a simple Jenkins pipeline concept.
 
