@@ -41,8 +41,8 @@ platform :ios do
   #   end
   #-----------------------------------Phase II, delete me when begining phase II
 
-    desc "Build for App Store submission"
-    lane :build_appstore do
+    desc "Compiles app for App Store submission"
+    lane :build_appstore do #build is stored in build_Appstore directory
       #sync_signing_assets(type: "appstore") --Referencing lane sync_signing_assets-- Phase II
       increment_build_number
       gym(
@@ -51,7 +51,7 @@ platform :ios do
       )
     end
 
-    desc "Build for Ad Hoc submission"
+    desc "Compiles app for Ad Hoc submission. Distribute app to testers on registered devices only. Apps expire in a few days and will stop working."
     lane :build_adhoc do
       #sync_signing_assets(type: "adhoc") --Referencing lane sync_signing_assets-- Phase II
       increment_build_number
@@ -60,13 +60,21 @@ platform :ios do
         export_method: "ad-hoc"
       )
     end
-
+    
+    desc "Calls on build_appstore, which then will increment build number and compiles app along with distributing to TestFlight. App expires after 90 days."
     lane :distribute_to_appstore do
-      build_appstore
+      build_appstore # --Referencing lane build_appstore to compile app
       pilot(
         team_name: "STRING The name of your Developer Portal team if you're in multiple teams",
-        changelog: "Version" {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}
+        changelog: "Version lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}" #What to Test field.
       )
     end
-  
+
+    desc "Looks at a set of app store review rules to avoid being rejected during review process. See Precheckfile for parameters or https://docs.fastlane.tools/actions/precheck/ for documentation."
+    lane :release do
+      precheck
+      UI.success "Still running..."
+    end
+    
+    desc "snapshot generates localized iOS and tvOS screenshots for different device types and languages for the App Store and can be uploaded using (deliver)"
 end

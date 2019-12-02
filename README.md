@@ -1,36 +1,39 @@
-## FastLane Tips:
+fastlane documentation
+================
+# Installation
 
-##### Lane input
+Make sure you have the latest version of the Xcode command line tools installed:
 
-###### Process Lane input
+```
+xcode-select --install
+```
 
-##### Return Lane Values
+Install _fastlane_ using
+```
+[sudo] gem install fastlane -NV
+```
+or alternatively using `brew cask install fastlane`
 
+# Available Actions
+## iOS
+### ios build_appstore
+```
+fastlane ios build_appstore
+```
+Build for App Store submission
+### ios build_adhoc
+```
+fastlane ios build_adhoc
+```
+Build for Ad Hoc submission
+### ios distribute_to_appstore
+```
+fastlane ios distribute_to_appstore
+```
+Looks at a set of app store review rules to avoid being rejected.
 
-###### Using return lane values
+----
 
-
-##### Lane Variables
-
-
-##### Exiting a lane early with "next"
-
-
-##### Lane Flow Control
-
-
-
-##### Call additional lanes from another lane
-
-lane :sync_all_development do
-  sync_device_info
-  
-  match type: "development"
-end
-
-##### Jenkins Pipeline Sample Jenkins Script
-
-This GitHub repository contains one single Jenkinsfile that is used to demonstrate a simple Jenkins pipeline concept.
-
-The repository was created to support the article written for [Opensource.com](https://opensource.com)
-
+This README.md is auto-generated and will be re-generated every time [fastlane](https://fastlane.tools) is run.
+More information about fastlane can be found on [fastlane.tools](https://fastlane.tools).
+The documentation of fastlane can be found on [docs.fastlane.tools](https://docs.fastlane.tools).

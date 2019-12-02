@@ -1,0 +1,14 @@
+app_identifier "The bundle identifier of your app"
+username "Your Apple ID Username"
+team_name "The name of your App Store Connect team if you're in multiple teams"
+team_id "The ID of your App Store Connect team if you're in multiple teams"
+
+# Examples:
+# negative_apple_sentiment(level: :skip) #mentioning  in a way that could be considered negative
+# curse_words(level: :warn) #including words that might be considered objectionable
+# future_functionality(level: :error) #mentioning features or content that is not currently available in your app
+# other_platforms(level: :error) #mentioning other platforms, like Android or Blackberry
+# placeholder_text(level: :error) #using placeholder text (e.g.:"lorem ipsum", "text here", etc...)
+# test_words(level: :error) #using text indicating this release is a test
+# unreachable_urls(level: :error) #unreachable URLs in app metadata
+# custom_text(data: ["fabric"], level: :warn) #mentioning any of the user-specified words passed to custom_text(data: [words])
